@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "watch": "watchify -vd -e app.js -o dist/bundle.js"
+    "watch": "watchify -vd -e app.js -o bundle.js",
+    "serve": "http-server -p 3000",
+    "dev": "npm-run-all -p watch serve"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-stage-2": "^6.18.0",
     "babelify": "^7.3.0",
     "browserify": "^13.3.0",
+    "http-server": "^0.9.0",
+    "npm-run-all": "^4.0.0",
     "vueify": "^9.4.0",
     "watchify": "^3.8.0"
   },
@@ -17,10 +21,10 @@
     "vue": "^2.1.8",
     "vuex": "^2.1.1"
   },
-	"browserify": {
-		"transform": [
-			"vueify",
-			"babelify"
-		]
-	}
+  "browserify": {
+    "transform": [
+      "vueify",
+      "babelify"
+    ]
+  }
 }
